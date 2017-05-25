@@ -1,0 +1,50 @@
+zhangjinsdfsdfs
+登录 | 注册
+pengzhaoyang100的专栏
+目录视图摘要视图订阅
+【活动】2017 CSDN博客专栏评选      【评论送书】SQL优化、深度学习、数据科学家      CSDN日报20170525 ——《狗蛋的寻亲之路，结识嵌入式世界的那只狗》      Python创意编程活动结果公布
+ 排字典顺序排序（c语言）
+标签： 语言c算法
+2012-07-31 17:23 8220人阅读 评论(0) 收藏 举报
+ 分类： 编程（13）   c语言（7）
+版权声明：本文为博主原创文章，未经博主允许不得转载。
+输入下述8个国家名字的字符串：CHINA、JAPAN、KOREA、INDIA、CANADA、AMERICAN、ENGLAND和FRANCE，将这些国名按字典顺序排序。
+
+
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+       charstr[8][9]={"CHINA","JAPAN","KOREA","INDIA","CANADA","AMERICAN","ENGLAND","FRANCE"};
+       chartemp[9];
+       inti,l;
+    for (i=0;i<8;i++)
+       {
+              for(l=0;l<9;l++)
+              {
+                     printf("%c",str[i][l]);
+              }
+              printf("\n");
+       }
+       //排序
+       printf("以上8个国家按字典中排序如下所示：\n");
+       intj,k;
+       for(j=0;j<8;j++)
+       for(k=j+1;k<8;k++)
+       {
+                     if(strcmp(str[j],str[k])>0)
+                     {//交换
+                            strcpy(temp,str[j]);
+                            strcpy(str[j],str[k]);
+                            strcpy(str[k],temp);
+                     }
+       }
+              for(i=0;i<8;i++)//输出
+                     printf("%s\n",str[i]);
+}
+
+1.字典序法
+　　字典序法中，对于数字1、2、3......n的排列，不同排列的先后关系是从左到右逐个比较对应的数字的先后来决定的。例如对于5个数字的排列12354和12345，排列12345在前，排列12354在后。按照这样的规定，5个数字的所有的排列中最前面的是12345，最后面的是54321。
+　　字典序算法如下：
+　　设P是1～n的一个全排列:p=p1p2......pn=p1p2......pj-1pj
